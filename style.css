@@ -1,0 +1,14 @@
+:root{
+    /*Les échelles du texte*/
+    --miseAEchelle: 1.618;
+    --petit-Texte: 16px;
+    --moyen-Texte: calc(var(--miseAEchelle)*var(--petit-Texte));
+    --gros-Texte: calc(var(--miseAEchelle)*var(--moyen-Texte));
+    --Giga-Texte: calc(var(--miseAEchelle)*var(--gros-Texte));
+  /*les couleurs*/
+    --couleur-or: #F7BD2E;
+    --couleur-bleu-stylo:#86B1C9;
+    --couleur-vert-pelouse-pale:#C6DB60;
+    --couleur-vert-feuille-plante:#6CA450;
+    
+}
