@@ -3,22 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="leafcode-LogoSiteWeb.png">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <img src="leafcode-LogoSiteWeb.png" alt="Une manette sur laquelle est écrit leafcode avec deux feuilles de plante comme antenne">
-    <header hidden>
-        <nav>
-            <a src="jeuUn.html">L'univers d'Altius</a>
-            <a src="jeuDeux.html">Rasta Bleu</a>
-            <a src="contact.html">Support</a>
-        </nav>
+    <div class="overlay" id="overlay"></div>
+    <header>
+        <img src="leafcode-LogoSiteWeb.png" alt="Une manette sur laquelle est écrit leafcode avec deux feuilles de plante comme antenne">
+        <button class="burger" id="burger">
+            <span class="burger-icon">
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+            </span>
+        </button>
+       
     </header>
-
+    <nav class="nav" id="nav">
+        <a src="jeuUn.html" class="nav-link">L'univers d'Altius</a>
+        <a src="jeuDeux.html" class="nav-link">Rasta Bleu</a>
+        <a src="jeuTrois.html" class="nav-link">Cocci Ninja</a>
+        <a src="contact.html" class="nav-link">Support</a>
+    </nav>
     <section></section>
     <section></section>
     <footer></footer>
-    
+    <script src="script.js"></script>
 </body>
 </html>
