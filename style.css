@@ -20,7 +20,7 @@
 
 header{
   display: flex;
-  background-color: var(--couleur-bleu-stylo);
+  background-color: var(--couleur-vert-pelouse-pale);
   justify-content: space-between;
   padding: 1.5rem 2rem;
   align-items: center;
@@ -35,30 +35,20 @@ header{
   cursor: pointer;
   border: none;
   background: none;
-  position: relative;
-  z-index: 201;
+  position: absolute;
+  right: 265px;
+  top: 60px;
 }
 .burger-icon{
   display: flex;
   flex-direction: column;
   width: 28px;
-  height: 3px;
   gap: 6px;
 }
 .burger-line{
-  height: 10px;
+  height: 3px;
   background-color:var(--couleur-vert-feuille-plante);
-}
-.overlay{
-  position: fixed;
-  background-color: rgba(0,0,0,0.6);
-  backdrop-filter: blur(2px);
-  inset: 0;
-  opacity: 0;
-  z-index: 99;
-}
-.overlay.is-open{
-  opacity: 1;
+  transition: transform 1s ease;
 }
 .burger.is-open .burger-line:nth-child(1){
   transform: translateY(7.5px) rotate(45deg);
@@ -70,24 +60,40 @@ header{
 
 }
 .burger.is-open .burger-line:nth-child(3){
-  transform: translateY(-7.5px) rotate(-45deg);
+  transform: translateY(-10px) rotate(-45deg);
 
+}
+.overlay{
+  position: fixed;
+  pointer-events: none;
+  background-color: rgba(0,0,0,0.6);
+  backdrop-filter: blur(2px);
+  inset: 0;
+  opacity: 0;
+  z-index: 99;
+}
+.overlay.is-open{
+  opacity: 1;
+  pointer-events: all;
 }
 
 .nav{
- background-color: var(--couleur-or);
- width: 320px;
- position: fixed;
- inset: 0 0 0 auto;
- display: flex;
- flex-direction: column;
- gap: 0.7rem;
- transform: translateY(100%);
- padding: 6rem 3rem 3rem;
- z-index: 200;
+  background-color: var(--couleur-or);
+  width: 320px;
+  position: fixed;
+  inset: 0 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+
+  transform: translateX(calc(100% - 80px));
+  transition: transform 0.4s ease;
+
+  padding: 6rem 6rem 3rem;
+  z-index: 200;
 }
 .nav.is-open{
-  transform: translateY(0);
+  transform: translateX(0);
 }
 .nav-link{
   color:var(--couleur-vert-feuille-plante);
