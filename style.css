@@ -20,6 +20,10 @@
 }
 h1{
   font-size: var(--Giga-Texte);
+  color:var(--couleur-or);
+}
+h2{
+  font-size: var(--gros-Texte);
   color:var(--couleur-vert-feuille-plante);
 }
 p{
@@ -30,10 +34,22 @@ p{
 /* Les lignes qui suivent permettent la réalisation du menu burger  */
 header{
   display: flex;
-  background-color: var(--couleur-vert-pelouse-pale);
+  background-color: var(--couleur-vert-feuille-plante);
   justify-content: space-between;
   padding: 1.5rem 2rem;
   align-items: center;
+  text-align: center;
+  
+}
+
+header > h1,
+header > div {
+  flex: 1;
+}
+
+header > div > img {
+  display: flex;
+  align-items: flex-start;
 }
 .burger{
   --sizeBtn: 2.5rem;
@@ -118,6 +134,7 @@ header{
   flex-direction: column;
   margin-top: 50px;
   gap: 50px;
+  align-items: center;
 }
 
 
@@ -125,13 +142,12 @@ header{
 .premiereSectionAccueil{
   display: flex;
   gap: 20px;
-  justify-content: center;
 }
 .sectionListeDeJeuAccueil{
   display: flex;
   flex-direction: column;
 }
-.sectionListeDeJeuAccueil:nth-child(2){
+.jeu:nth-child(3){
   border-bottom: none;
 }
 .jeu{
@@ -150,13 +166,11 @@ header{
 /* la deuxième section */
 .deuxiemeSectionAccueil{
   display: flex;
-  justify-content: center; 
 }
 .sectionTextAccueil{
   display: flex;
   flex-direction: column;
   width: 720px;
-  height: 20px;
 }
 .sectionTextAccueil p{
   text-align: justify;
@@ -166,7 +180,47 @@ header{
 .troisiemeSectionAccueil {
   display: flex;
   gap: 15px;
-  width: 230px;
-  height: 200px;
-  justify-content: center;
+}
+.troisiemeSectionAccueil img{
+  width: 200px;
+  height: 230px;
+}
+
+/* les lignes suivantes sont nécessaires à la mise en page de la page de jeuUn */
+
+/* la première section */
+.pageJeuUn{
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  gap: 75px;
+  align-items: center;
+}
+
+/* la deuxième section */
+.deuxiemeSectionJeuUn{
+  display: flex;
+  gap: 30px;
+}
+.carteGamePlay{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 300px;
+}
+
+/*la troisième section*/
+.troisiemeSectionJeuUn{
+  display: flex;
+  gap: 30px;
+}
+.informationsPersonnageJeuUn{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 500px;
+}
+.selectionDePersonnageJeuUn{
+  display: flex;
+  gap: 10px;
 }
