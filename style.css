@@ -9,15 +9,25 @@
     --couleur-or: #F7BD2E;
     --couleur-bleu-stylo:#86B1C9;
     --couleur-vert-pelouse-pale:#C6DB60;
-    --couleur-vert-feuille-plante:#6CA450;
-    
+    --couleur-vert-feuille-plante:#6CA450; 
+
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+h1{
+  font-size: var(--Giga-Texte);
+  color:var(--couleur-vert-feuille-plante);
+}
+p{
+  font-size: var(--moyen-Texte);
 
+}
+
+/* Les lignes qui suivent permettent la réalisation du menu burger  */
 header{
   display: flex;
   background-color: var(--couleur-vert-pelouse-pale);
@@ -25,7 +35,6 @@ header{
   padding: 1.5rem 2rem;
   align-items: center;
 }
-
 .burger{
   --sizeBtn: 2.5rem;
   width: var(--sizeBtn);
@@ -101,4 +110,63 @@ header{
   padding: 0.6rem 0;
   font-size: 1.6rem;
 
+}
+
+/* les lignes suivantes sont nécessaires à la mise en page de la page d'accueil */
+.maPageAccueil{
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  gap: 50px;
+}
+
+
+/* la première section */
+.premiereSectionAccueil{
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+.sectionListeDeJeuAccueil{
+  display: flex;
+  flex-direction: column;
+}
+.sectionListeDeJeuAccueil:nth-child(2){
+  border-bottom: none;
+}
+.jeu{
+  display: flex;
+  width: 300px;
+  height: 70px;
+  background-color: var(--couleur-bleu-stylo);
+  border-bottom: 2px solid var(--couleur-or);
+}
+.sectionAffichageJeuAccueil{
+  width:400px;
+  height:210px;
+  background-color: var(--couleur-or);
+}
+
+/* la deuxième section */
+.deuxiemeSectionAccueil{
+  display: flex;
+  justify-content: center; 
+}
+.sectionTextAccueil{
+  display: flex;
+  flex-direction: column;
+  width: 720px;
+  height: 20px;
+}
+.sectionTextAccueil p{
+  text-align: justify;
+}
+
+/* la troisième section */
+.troisiemeSectionAccueil {
+  display: flex;
+  gap: 15px;
+  width: 230px;
+  height: 200px;
+  justify-content: center;
 }
