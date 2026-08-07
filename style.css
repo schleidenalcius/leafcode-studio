@@ -132,7 +132,7 @@ header > div > img {
 .maPageAccueil{
   display: flex;
   flex-direction: column;
-  margin-top: 50px;
+  margin-top: 100px;
   gap: 50px;
   align-items: center;
 }
@@ -160,7 +160,6 @@ header > div > img {
 .sectionAffichageJeuAccueil{
   width:400px;
   height:210px;
-  background-color: var(--couleur-or);
 }
 
 /* la deuxième section */
@@ -192,7 +191,7 @@ header > div > img {
 .pageJeuUn{
   display: flex;
   flex-direction: column;
-  margin-top: 50px;
+  margin-top: 100px;
   gap: 75px;
   align-items: center;
 }
@@ -223,4 +222,75 @@ header > div > img {
 .selectionDePersonnageJeuUn{
   display: flex;
   gap: 10px;
+}
+
+
+/* les lignes suivantes sont nécessaires à la mise en page de la page de jeuDeux */
+
+.sectionCarteJeuDeux{
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+  gap:75px;
+  align-items:center;
+}
+.infoCarteJeuDeux{
+  display: flex;
+  width: 500px;
+}
+
+
+
+/* les lignes suivantes sont nécessaires à la mise en page de la page de jeuTrois */
+.sectionUniqueJeuTrois{
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+  gap: 150px;
+  align-items: center;
+}
+.blocHistoireJeuTrois{
+  text-align: center;
+  width: 800px;
+}
+.blocHistoireJeuTrois p{
+background-color: white;
+}
+.jeuTrois{
+  background-image: url(arrierePlanJeuTrois.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+/* les lignes suivantes sont nécessaires à la mise en page de la page de Support */
+.sectionFormulairePageSupport{
+  margin-top: 100px;
+  display:flex;
+  flex-direction:column;
+  gap: 20px;
+  align-items: center;
+}
+input{
+  border-radius: 10px;
+  width: 500px;
+  height:100px;
+}
+textarea{
+  width: 500px;
+  height: 200px;
+}
+
+button{
+  border-radius: 10px;
+  width:150px;
+  height: 50px;
+  background-color: var(--couleur-or);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: var(--moyen-Texte);
+  border: 2px solid var(--couleur-vert-feuille-plante);
+}
+button:hover{
+  border-top: 2px solid var(--couleur-vert-pelouse-pale);
+  border-left: 2px solid var(--couleur-vert-pelouse-pale);
 }
