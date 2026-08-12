@@ -236,10 +236,28 @@ header > div > img {
 }
 .infoCarteJeuDeux{
   display: flex;
-  width: 500px;
+  width: 600px;
+  gap:15px;
 }
-
-
+.infoCarteJeuDeux img{
+  border-radius: 5px;
+  border: 2px solid var(--couleur-or);
+  width:400px;
+}
+.infoCarteJeuDeux p{
+ color: var(--couleur-vert-feuille-plante);
+ border: 2px solid var(--couleur-vert-feuille-plante);
+ background-color: var(--couleur-or);
+ padding: 10px;
+ border-radius: 5px;
+}
+.jeuDeux{
+  background-image: url(arrierePlanJeuDeux.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
 
 /* les lignes suivantes sont nécessaires à la mise en page de la page de jeuTrois */
 .sectionUniqueJeuTrois{
