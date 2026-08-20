@@ -195,7 +195,9 @@ header > div > img {
   gap: 75px;
   align-items: center;
 }
-
+.banniereJeuUn{
+  border-radius: 5px;
+}
 /* la deuxième section */
 .deuxiemeSectionJeuUn{
   display: flex;
@@ -221,7 +223,7 @@ header > div > img {
 }
 .selectionDePersonnageJeuUn{
   display: flex;
-  gap: 10px;
+  gap: 25px;
 }
 
 

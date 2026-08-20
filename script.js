@@ -2,6 +2,10 @@
 const burgerBtn =document.getElementById('burger');
 const nav =document.getElementById('nav');
 const overlay =document.getElementById('overlay');
+let personnages = document.querySelectorAll(".unPersonnage");
+let personnageSelectionne= document.querySelector("#personnageSelectionne");
+let nomPersonnageJeuUn= document.querySelector("#nomPersonnageJeuUn");
+let descriptionPersonnageJeuUn= document.querySelector("#descriptionPersonnageJeuUn");
 //variables nécessaires pour la liste de jeu dans la page d'accueil
 /*let */
 
@@ -18,3 +22,36 @@ function toggle (){
     nav.classList.toggle('is-open');
     overlay.classList.toggle('is-open');
 }
+
+function donnerEvenement(){
+    personnages.forEach((personnage)=>{
+       personnage.addEventListener("click", (event) =>{
+        let idPersonnage = event.target.id;    
+        console.log(idPersonnage);
+        switch(idPersonnage){
+            case "FALL":
+                personnageSelectionne.src="jeuUn-F-Incomplet.png";
+                nomPersonnageJeuUn.textContent=idPersonnage;
+                descriptionPersonnageJeuUn.textContent=personnage.alt;
+            break;
+            case "Frieden":
+                personnageSelectionne.src="jeuUn-Fr-Incomplet.png";
+                nomPersonnageJeuUn.textContent=idPersonnage;
+                descriptionPersonnageJeuUn.textContent=personnage.alt;
+            break;
+            case "Leo":
+                personnageSelectionne.src="jeuUn-L-Incomplet.png";
+                nomPersonnageJeuUn.textContent=idPersonnage;
+                descriptionPersonnageJeuUn.textContent=personnage.alt;
+            break;
+            case "Coisabafe":
+                personnageSelectionne.src="jeuUn-C-Incomplet.png";
+                nomPersonnageJeuUn.textContent=idPersonnage;
+                descriptionPersonnageJeuUn.textContent=personnage.alt;
+            break;
+        }
+       });
+    });
+}
+
+donnerEvenement();
