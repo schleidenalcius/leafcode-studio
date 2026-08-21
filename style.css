@@ -206,8 +206,12 @@ header > div > img {
 .carteGamePlay{
   display: flex;
   flex-direction: column;
+  text-align: center;
   gap: 20px;
   width: 300px;
+}
+.carteGamePlay img{
+  border-radius: 5px;
 }
 
 /*la troisième section*/
@@ -254,7 +258,7 @@ header > div > img {
  border-radius: 5px;
 }
 .jeuDeux{
-  background-image: url(arrierePlanJeuDeux.png);
+  background-image: url(Images/arrierePlanJeuDeux.png);
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
@@ -277,7 +281,7 @@ header > div > img {
 background-color: white;
 }
 .jeuTrois{
-  background-image: url(arrierePlanJeuTrois.png);
+  background-image: url(Images/arrierePlanJeuTrois.png);
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;

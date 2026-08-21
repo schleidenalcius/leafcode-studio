@@ -30,22 +30,22 @@ function donnerEvenement(){
         console.log(idPersonnage);
         switch(idPersonnage){
             case "FALL":
-                personnageSelectionne.src="jeuUn-F-Incomplet.png";
+                personnageSelectionne.src="Images/jeuUn-F-Incomplet.png";
                 nomPersonnageJeuUn.textContent=idPersonnage;
                 descriptionPersonnageJeuUn.textContent=personnage.alt;
             break;
             case "Frieden":
-                personnageSelectionne.src="jeuUn-Fr-Incomplet.png";
+                personnageSelectionne.src="Images/jeuUn-Fr-Incomplet.png";
                 nomPersonnageJeuUn.textContent=idPersonnage;
                 descriptionPersonnageJeuUn.textContent=personnage.alt;
             break;
             case "Leo":
-                personnageSelectionne.src="jeuUn-L-Incomplet.png";
+                personnageSelectionne.src="Images/jeuUn-L-Incomplet.png";
                 nomPersonnageJeuUn.textContent=idPersonnage;
                 descriptionPersonnageJeuUn.textContent=personnage.alt;
             break;
             case "Coisabafe":
-                personnageSelectionne.src="jeuUn-C-Incomplet.png";
+                personnageSelectionne.src="Images/jeuUn-C-Incomplet.png";
                 nomPersonnageJeuUn.textContent=idPersonnage;
                 descriptionPersonnageJeuUn.textContent=personnage.alt;
             break;
