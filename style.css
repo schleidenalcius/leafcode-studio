@@ -164,11 +164,7 @@ header > div > img {
   width: 300px;
   height: 70px;
   background-color: var(--couleur-or);
-  border-bottom: 2px solid var(--couleur-or);
-}
-.sectionAffichageJeuAccueil{
-  width:400px;
-  height:210px;
+  border-bottom: 3px solid var(--couleur-vert-feuille-plante);
 }
 
 /* la deuxième section */
@@ -296,6 +292,7 @@ header > div > img {
 .blocHistoireJeuTrois{
   text-align: center;
   width: 800px;
+  margin-bottom: 100px;
 }
 .blocHistoireJeuTrois p{
 background-color: white;
@@ -337,4 +334,10 @@ button{
 button:hover{
   border-top: 2px solid var(--couleur-vert-pelouse-pale);
   border-left: 2px solid var(--couleur-vert-pelouse-pale);
+}
+
+@media(max-width:1180px){
+  .troisiemeSectionAccueil{
+    flex-direction: column;
+  }
 }
