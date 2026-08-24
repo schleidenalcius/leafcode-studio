@@ -26,6 +26,10 @@ h2{
   font-size: var(--gros-Texte);
   color:var(--couleur-vert-feuille-plante);
 }
+h3{
+  font-size: var(--moyen-Texte);
+  color:var(--couleur-vert-feuille-plante);
+}
 p{
   font-size: var(--moyen-Texte);
 
@@ -141,11 +145,16 @@ header > div > img {
 /* la première section */
 .premiereSectionAccueil{
   display: flex;
+  width: 1000px;
   gap: 20px;
+  justify-content: center;
 }
 .sectionListeDeJeuAccueil{
   display: flex;
   flex-direction: column;
+}
+.premiereSectionAccueil p{
+  width: 400px;
 }
 .jeu:nth-child(3){
   border-bottom: none;
@@ -154,7 +163,7 @@ header > div > img {
   display: flex;
   width: 300px;
   height: 70px;
-  background-color: var(--couleur-bleu-stylo);
+  background-color: var(--couleur-or);
   border-bottom: 2px solid var(--couleur-or);
 }
 .sectionAffichageJeuAccueil{
@@ -180,9 +189,17 @@ header > div > img {
   display: flex;
   gap: 15px;
 }
-.troisiemeSectionAccueil img{
-  width: 200px;
-  height: 230px;
+.troisiemeSectionAccueil a{
+  color:black;
+}
+.carteUnJeu{
+  padding-left: 90px;
+  padding-right: 90px;
+  padding-top: 190px;
+  padding-bottom: 190px;
+  margin-bottom: 60px;
+  background-color: var(--couleur-or);
+  border-radius: 5px;
 }
 
 /* les lignes suivantes sont nécessaires à la mise en page de la page de jeuUn */
@@ -272,6 +289,9 @@ header > div > img {
   margin-top: 100px;
   gap: 150px;
   align-items: center;
+}
+.sectionUniqueJeuTrois img{
+  border-radius: 5px;
 }
 .blocHistoireJeuTrois{
   text-align: center;
