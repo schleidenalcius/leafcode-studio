@@ -6,6 +6,8 @@ let personnages = document.querySelectorAll(".unPersonnage");
 let personnageSelectionne= document.querySelector("#personnageSelectionne");
 let nomPersonnageJeuUn= document.querySelector("#nomPersonnageJeuUn");
 let descriptionPersonnageJeuUn= document.querySelector("#descriptionPersonnageJeuUn");
+let pBanniereAccueilSelectionne= document.querySelector("#pBanniereAccueilSelectionne");
+let bannieres = document.querySelectorAll(".imgQuiChangeP");
 //variables nécessaires pour la liste de jeu dans la page d'accueil
 /*let */
 
@@ -54,4 +56,13 @@ function donnerEvenement(){
     });
 }
 
+function changerTexteBanniereAccueil(){
+    bannieres.forEach((banniere)=>{
+        banniere.addEventListener("click", () =>{
+            pBanniereAccueilSelectionne.textContent=banniere.alt;
+        });
+});
+}
+
 donnerEvenement();
+changerTexteBanniereAccueil();
