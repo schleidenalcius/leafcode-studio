@@ -1,67 +1,354 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="leafcode-LogoSiteWeb.png">
-    <title>Leafcode</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-      <div class="overlay" id="overlay"></div>
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" href="Images/leafcode-LogoSiteWeb.png" />
+    <title>L'univers d'Altius — Leafcode</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="overlay" id="overlay"></div>
     <header>
-        <div><img src="Images/leafcode-LogoSiteWeb.png" alt="Une manette à l'envers sur laquelle est écrit leafcode avec deux feuilles de plante qui sortent sur le côté comme les feuilles d'une graine qui germe"></div>
-        <h1>Leafcode</h1>
-        <div></div>
+      <div>
+        <img src="Images/leafcode-LogoSiteWeb.png" alt="Logo Leafcode" />
+      </div>
+      <h1>Leafcode</h1>
+      <div></div>
     </header>
     <nav class="nav" id="nav">
-        <button class="burger" id="burger">
-            <span class="burger-icon">
-                <span class="burger-line"></span>
-                <span class="burger-line"></span>
-                <span class="burger-line"></span>
-            </span>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu">
+        <span class="burger-icon">
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+        </span>
+      </button>
+      <a href="index.html" class="nav-link">Accueil</a>
+      <a href="jeuDeux.html" class="nav-link">Rasta Bleu</a>
+      <a href="jeuTrois.html" class="nav-link">Cocci Ninja</a>
+      <a href="contact.html" class="nav-link">Support</a>
+    </nav>
+    <main class="pageJeuUn">
+      <section class="premiereSectionJeuUn">
+        <img
+          class="banniereJeuUn"
+          src="Images/banniereJeuUn.png"
+          alt="L'univers d'Altius, quatre personnages affrontent des démons"
+        />
+      </section>
+      <section class="deuxiemeSectionJeuUn">
+        <div class="carteGamePlay">
+          <img src="Images/jeuUnCompetences.png" alt="Aperçu des compétences" />
+          <p>Devenez plus fort ! Plus vous pratiquez, meilleur vous serez.</p>
+        </div>
+        <div class="carteGamePlay">
+          <img src="Images/jeuUn-Concept.png" alt="Aperçu du concept" />
+          <p>Votre plaisir est garanti !</p>
+        </div>
+        <div class="carteGamePlay">
+          <img src="Images/jeuUn-Gameplay.png" alt="Aperçu du jeu" />
+          <p>Remportez la victoire sur votre paresse.</p>
+        </div>
+      </section>
+
+      <section class="troisiemeSectionJeuUn">
+        <div class="informationsPersonnageJeuUn">
+          <h2 id="nomPersonnageJeuUn">Leo</h2>
+          <p id="descriptionPersonnageJeuUn">
+            Leo, le spécialiste du langage, utilise un cahier et une feuille
+            comme armes.
+          </p>
+          <div class="selectionDePersonnageJeuUn">
+            <img
+              class="unPersonnage"
+              id="Leo"
+              src="Images/jeuUn-Leo-Profil.png"
+              alt="Leo, spécialiste du langage."
+            />
+            <img
+              class="unPersonnage"
+              id="Frieden"
+              src="Images/jeuUn-Frieden-Profil.png"
+              alt="Frieden, spécialiste de l'abstrait."
+            />
+            <img
+              class="unPersonnage"
+              id="FALL"
+              src="Images/jeuUn-FALL-Profil.png"
+              alt="FALL, spécialiste des sons."
+            />
+            <img
+              class="unPersonnage"
+              id="Coisabafe"
+              src="Images/jeuUn-Coisabafe-Profil.png"
+              alt="Coisabafe, spécialiste des schémas."
+            />
+          </div>
+        </div>
+        <img
+          id="personnageSelectionne"
+          src="Images/jeuUn-L-Incomplet.png"
+          alt="Personnage sélectionné"
+        />
+      </section>
+
+      <section class="launch-zone" id="launchZone">
+        <h2>Prêt à entrer dans le livre ?</h2>
+        <p>
+          Explorez « Philosophie » mot après mot, conservez vos découvertes et
+          développez votre endurance de lecture.
+        </p>
+        <button class="a-btn" id="launchGame" type="button">
+          Lancer le jeu
         </button>
-            <a href="index.html" class="nav-link">Accueil</a>
-            <a href="jeuDeux.html" class="nav-link">Rasta Bleu</a>
-            <a href="jeuTrois.html" class="nav-link">Cocci Ninja</a>
-            <a href="contact.html" class="nav-link">Support</a>
-        </nav>
-    </header>
-    
-    <div class="pageJeuUn">
-        <section class="premiereSectionJeuUn">
-            <img class="banniereJeuUn" src="Images/banniereJeuUn.png" alt="Au milieu de la banière est écrit L'univers d'Altius en or. En arrière plan on voit 4 personnages qui combattent des démons.">
-        </section>
-        <section class="deuxiemeSectionJeuUn">
-            <div class="carteGamePlay">
-                <img src="Images/jeuUnCompetences.png" alt="Apperçu des compétences du mode de jeu">
-                <p>Devenez plus fort! Plus vous pratiquez, meilleur vous serez.</p>
+        <p id="launchRestMessage" hidden></p>
+      </section>
+    </main>
+
+    <section
+      class="reading-game"
+      id="readingGame"
+      hidden
+      aria-label="Jeu de lecture"
+    >
+      <div class="game-shell">
+        <div class="game-topbar">
+          <div class="brand-block">
+            <strong>L'univers d'Altius</strong>
+            <span>Quête de lecture · Philosophie</span>
+          </div>
+          <div class="player-stats">
+            <div class="stat">
+              <strong id="xpValue">0 XP</strong>
+              <small>Expérience</small>
             </div>
-            <div class="carteGamePlay">
-                <img src="Images/jeuUn-Concept.png" alt="">
-                <p>Votre plaisir est garantie!</p>
+            <div class="stat">
+              <strong id="levelValue">Niveau 1</strong>
+              <small>5 chapitres / niveau</small>
             </div>
-            <div class="carteGamePlay">
-                <img src="Images/jeuUn-Gameplay.png" alt="Apperçu du mode de jeu">
-                <p>Remportez la victoire sur votre paresse</p>
+          </div>
+          <div class="energy-wrap">
+            <div class="energy-label">
+              <span>Énergie</span>
+              <strong id="energyValue">100 %</strong>
             </div>
-        </section>
-        <section class="troisiemeSectionJeuUn">
-            <div class="informationsPersonnageJeuUn">
-                <h2 id="nomPersonnageJeuUn">Leo</h2>
-                <p id="descriptionPersonnageJeuUn">Leo le spécialiste du langage est debout les mains sur les hanches et le torse bombé avec un cahier et une feuille comme arme.</p>
-                <div class="selectionDePersonnageJeuUn">
-                    <img class="unPersonnage" id="Leo" src="Images/jeuUn-Leo-Profil.png" alt="Leo le spécialiste du langage est debout les mains sur les hanches et le torse bombé avec un cahier et une feuille comme arme.">
-                    <img class="unPersonnage" id="Frieden" src="Images/jeuUn-Frieden-Profil.png" alt="Frieden le spécialiste de l'abstrait est debout avec un stylo. Il pense à des équations.">
-                    <img class="unPersonnage" id="FALL" src="Images/jeuUn-FALL-Profil.png" alt="FALL le spécialiste des sons a un alto comme arme sur l'épaule et improvise une mélodie.">
-                    <img class="unPersonnage" id="Coisabafe" src="Images/jeuUn-Coisabafe-Profil.png" alt="Coisabafe le spécialiste des schémas se tient avec une efface et du fusin comme arme. Il matérialise des motifs avec son fusin.">
+            <div class="meter">
+              <span id="energyBar"></span>
+            </div>
+          </div>
+        </div>
+        <div class="game-layout">
+          <article class="reader">
+            <div class="reader-meta">
+              <div>
+                <div class="eyebrow" id="chapterNumber">Chapitre 1</div>
+                <h2 id="chapterTitle">Introduction</h2>
+              </div>
+              <select
+                class="chapter-select"
+                id="chapterSelect"
+                aria-label="Choisir un chapitre"
+              ></select>
+            </div>
+            <div class="paragraph-count" id="paragraphCount"></div>
+            <p class="reading-text" id="readingText" aria-live="polite"></p>
+            <div class="current-word-box">
+              <small>Mot sélectionné</small>
+              <strong id="currentWord">—</strong>
+            </div>
+            <div class="reader-controls">
+              <button class="a-btn secondary reading-control" id="previousWord">
+                ← Précédent
+              </button>
+              <button class="a-btn secondary reading-control" id="saveWord">
+                M · Mot
+              </button>
+              <button class="a-btn secondary reading-control" id="saveSentence">
+                Espace · Phrase
+              </button>
+              <button class="a-btn reading-control" id="nextWord">
+                Suivant →
+              </button>
+            </div>
+            <p class="keyboard-help">
+              <kbd>←</kbd>
+              <kbd>→</kbd> naviguer · <kbd>M</kbd> mot ·
+              <kbd>Espace</kbd>
+              phrase
+            </p>
+            <p class="source-line">
+              Texte préparé d'après
+              <a
+                href="https://fr.wikipedia.org/wiki/Philosophie"
+                target="_blank"
+                rel="noopener"
+                >« Philosophie » sur Wikipédia</a
+              >
+              (CC BY-SA).
+            </p>
+          </article>
+          <aside class="game-sidebar">
+            <section class="side-card">
+              <h3>Session</h3>
+              <div class="session-grid">
+                <div>
+                  <strong id="sessionTime">00:00</strong>
+                  <small>temps</small>
                 </div>
-            </div>
-            <img id="personnageSelectionne" src="Images/jeuUn-L-Incomplet.png" alt="Le personnage sélectionné s'affiche">
-        </section>
+                <div>
+                  <strong id="sessionWords">0</strong>
+                  <small>mots lus</small>
+                </div>
+                <div>
+                  <strong id="sessionWpm">0</strong>
+                  <small>mots/min</small>
+                </div>
+                <div>
+                  <strong id="sessionPauses">0</strong>
+                  <small>pauses</small>
+                </div>
+              </div>
+            </section>
+            <section class="side-card">
+              <h3>Progression</h3>
+              <strong id="bookProgressLabel">Livre : 0 %</strong>
+              <div class="meter book-progress">
+                <span id="bookProgressBar"></span>
+              </div>
+              <small id="completionLabel"></small>
+            </section>
+            <section class="side-card">
+              <h3>Mots par minute</h3>
+              <div class="wpm-chart" id="wpmChart"></div>
+              <small>Une barre par minute</small>
+            </section>
+            <section class="side-card">
+              <h3>Carnet de notes</h3>
+              <ul class="notes-list" id="notesList"></ul>
+              <div class="side-actions">
+                <button class="a-btn secondary" id="downloadNotes">
+                  Télécharger TXT
+                </button>
+              </div>
+            </section>
+            <section class="side-card">
+              <h3>Historique</h3>
+              <ul class="history-list" id="historyList"></ul>
+            </section>
+            <button class="a-btn danger" id="endSession">
+              Terminer la session
+            </button>
+          </aside>
+        </div>
+      </div>
+    </section>
+    <div
+      class="game-modal"
+      id="gameModal"
+      hidden
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalTitle"
+    >
+      <div class="modal-card">
+        <h2 id="modalTitle">Session terminée</h2>
+        <div id="modalContent"></div>
+        <button class="a-btn" id="closeModal">Fermer</button>
+      </div>
     </div>
+    <div class="toast" id="gameToast" role="status" aria-live="polite"></div>
     <footer></footer>
+    <script id="bookData" type="application/json">
+      {
+        "book": {
+          "title": "Philosophie",
+          "source": "Wikipédia francophone",
+          "chapters": [
+            {
+              "id": 1,
+              "title": "Introduction",
+              "paragraphs": [
+                "La philosophie, du grec ancien philosophía, signifiant littéralement « amour du savoir » et communément « amour de la sagesse », est une démarche qui vise à la compréhension du monde et de la vie par une réflexion rationnelle et critique.",
+                "La philosophie existe depuis l'Antiquité en Occident et en Orient, à travers la figure du philosophe, non seulement en tant qu'activité rationnelle mais aussi comme mode de vie.",
+                "La philosophie a engendré des domaines d'études fondamentaux tels la logique, l'éthique, la métaphysique et l'épistémologie."
+              ]
+            },
+            {
+              "id": 2,
+              "title": "Étymologie",
+              "paragraphs": [
+                "Étymologiquement, le mot français philosophie dérive du grec ancien philosophía, composé de philéô, aimer, et de sophía, sagesse ou savoir.",
+                "Le mot philosophía fait partie du lexique du grec ancien, où l'on trouve des usages attestés dès l'Antiquité.",
+                "Le nom philósophos, philosophe, et le verbe philosophô, cultiver la philosophie, apparaissent chez les penseurs présocratiques."
+              ]
+            },
+            {
+              "id": 3,
+              "title": "La philosophie comme mode de vie",
+              "paragraphs": [
+                "La philosophie s'est comprise très tôt comme une manière de vivre et non pas uniquement comme une réflexion théorique.",
+                "La philosophie, entendue comme mode de vie, met l'accent sur la mise en application dans sa propre vie des résultats de la réflexion philosophique.",
+                "Depuis les présocratiques et surtout à partir de Socrate, toute une tradition a défendu cette conception de la philosophie comme un mode de vie."
+              ]
+            },
+            {
+              "id": 4,
+              "title": "La philosophie occidentale",
+              "paragraphs": [
+                "La philosophie contemporaine occidentale, issue d'une tradition multiple, se présente sous des formes variées : tradition herméneutique, philosophie analytique et tradition phénoménologique.",
+                "Les difficultés à définir la philosophie sont de nature épistémologique, car il est difficile de délimiter rigoureusement ses méthodes, ses thèmes et ses objets.",
+                "La philosophie se comprend comme un travail critique dont le but est de créer de nouvelles certitudes et de corriger les fausses évidences."
+              ]
+            },
+            {
+              "id": 5,
+              "title": "Histoire de la philosophie occidentale",
+              "paragraphs": [
+                "Si la philosophie a une longue histoire, il convient de distinguer la pratique de la philosophie de l'étude simple des doctrines passées.",
+                "L'histoire de la philosophie consiste à reconstruire, comprendre, interpréter, voire critiquer les positions et les thèses des penseurs.",
+                "La philosophie grecque se caractérise par la question de savoir comment bien vivre, et plus particulièrement par celles de la vertu et du bonheur."
+              ]
+            },
+            {
+              "id": 6,
+              "title": "Les philosophies asiatiques",
+              "paragraphs": [
+                "La pensée chinoise s'appuie plus volontiers sur un esprit de synthèse que sur un esprit d'analyse, et sur la résolution des problèmes plutôt que sur la définition des concepts.",
+                "Le confucianisme est la voie principale de la philosophie chinoise et toute éducation se fondait en premier lieu sur les livres formant le Canon confucianiste.",
+                "Le bouddhisme est l'un des grands systèmes de pensée et d'action orientaux, fondé sur le Bouddha, le Dharma et le Sangha."
+              ]
+            },
+            {
+              "id": 7,
+              "title": "La philosophie africaine",
+              "paragraphs": [
+                "Le débat sur la philosophie africaine a beaucoup évolué à la fin du vingtième et au début du vingt et unième siècle.",
+                "Une question qui accapare nombre de philosophes africains se situe sur la nature de la philosophie africaine elle-même.",
+                "La philosophie africaine puise à la fois dans l'héritage traditionnel du continent et dans l'héritage de la philosophie occidentale."
+              ]
+            },
+            {
+              "id": 8,
+              "title": "Place des femmes en philosophie",
+              "paragraphs": [
+                "Bien que les hommes aient généralement dominé le discours philosophique, les femmes philosophes se sont engagées dans cette discipline tout au long de l'histoire.",
+                "Parmi les exemples anciens figurent Hipparchia et Arété de Cyrène.",
+                "Au début des années 1800, certains collèges et universités du Royaume-Uni et des États-Unis ont commencé à admettre des femmes."
+              ]
+            },
+            {
+              "id": 9,
+              "title": "Critiques",
+              "paragraphs": [
+                "Cette section est vide, insuffisamment détaillée ou incomplète.",
+                "Votre aide est la bienvenue."
+              ]
+            }
+          ]
+        }
+      }
+    </script>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

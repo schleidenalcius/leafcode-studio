@@ -1,49 +1,272 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="leafcode-LogoSiteWeb.png">
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="Images/leafcode-LogoSiteWeb.png"
+    />
     <title>Leafcode</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body class="jeuDeux">
-     <div class="overlay" id="overlay"></div>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="jeuDeux">
+    <div class="overlay" id="overlay"></div>
     <header>
-        <div><img src="Images/leafcode-LogoSiteWeb.png" alt="Une manette à l'envers sur laquelle est écrit leafcode avec deux feuilles de plante qui sortent sur le côté comme les feuilles d'une graine qui germe"></div>
-        <h1>Leafcode</h1>
-        <div></div>
+      <div>
+        <img
+          src="Images/leafcode-LogoSiteWeb.png"
+          alt="Une manette à l'envers sur laquelle est écrit leafcode avec deux feuilles de plante qui sortent sur le côté comme les feuilles d'une graine qui germe"
+        />
+      </div>
+      <h1>Leafcode</h1>
+      <div></div>
     </header>
     <nav class="nav" id="nav">
-        <button class="burger" id="burger">
-            <span class="burger-icon">
-                <span class="burger-line"></span>
-                <span class="burger-line"></span>
-                <span class="burger-line"></span>
-            </span>
-        </button>
-            <a href="index.html" class="nav-link">Accueil</a>
-            <a href="jeuUn.html" class="nav-link">L'univers d'Altius</a>
-            <a href="jeuTrois.html" class="nav-link">Cocci Ninja</a>
-            <a href="contact.html" class="nav-link">Support</a>
-        </nav>
-    </header>
-    
+      <button class="burger" id="burger">
+        <span class="burger-icon">
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+        </span>
+      </button>
+      <a href="index.html" class="nav-link">Accueil</a>
+      <a href="jeuUn.html" class="nav-link">L'univers d'Altius</a>
+      <a href="jeuTrois.html" class="nav-link">Cocci Ninja</a>
+      <a href="contact.html" class="nav-link">Support</a>
+    </nav>
+
     <section class="sectionCarteJeuDeux">
-        <div class="infoCarteJeuDeux">
-            <img src="Images/jeuDeuxImg2.png"" alt="Image du mode de jeu.">
-            <p>Vous y êtes presque donc pas un jour sans une ligne.</p>
-        </div>
-        <div class="infoCarteJeuDeux">
-            <img src="Images/jeuDeuxImg1.png" alt="Mode histoire">
-            <p>Lisez en rythme pour comprendre les cycles de la vie.</p>
-        </div>
-        <div class="infoCarteJeuDeux">
-            <img src="Images/jeuDeuxImg3.png" alt="les enjeux">
-            <p>Le chaos envahit mon esprit j'y met de l'ordre.</p>
-        </div>
+      <div class="infoCarteJeuDeux">
+        <img src="Images/jeuDeuxImg2.png" alt="Image du mode de jeu." />
+        <p>Vous y êtes presque donc pas un jour sans une ligne.</p>
+      </div>
+      <div class="infoCarteJeuDeux">
+        <img src="Images/jeuDeuxImg1.png" alt="Mode histoire" />
+        <p>Lisez en rythme pour comprendre les cycles de la vie.</p>
+      </div>
+      <div class="infoCarteJeuDeux">
+        <img src="Images/jeuDeuxImg3.png" alt="les enjeux" />
+        <p>Le chaos envahit mon esprit j'y met de l'ordre.</p>
+      </div>
     </section>
-    <footer></footer> 
+
+    <section class="lexi-launch" id="lexiLaunchZone">
+      <span class="lexi-kicker"
+        >Dactylographie · Plateforme · Vocabulaire C1</span
+      >
+      <h2>Entre dans le monde de LexiBall</h2>
+      <p>
+        Déplace la boule, rencontre les mots et écris-les pour construire ta
+        progression.
+      </p>
+      <button
+        class="lexi-button lexi-button-primary"
+        id="launchLexiBall"
+        type="button"
+      >
+        Lancer le jeu
+      </button>
+    </section>
+
+    <section
+      class="lexiball"
+      id="lexiBallGame"
+      hidden
+      aria-label="Jeu de dactylographie LexiBall"
+    >
+      <div class="lexi-shell">
+        <header class="lexi-hud">
+          <button
+            class="lexi-notebook-button"
+            id="lexiNotebookToggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="lexiNotebook"
+            title="Ouvrir le carnet"
+          >
+            📓<span>Carnet</span>
+          </button>
+          <div class="lexi-stat">
+            <small>Niveau</small><strong id="lexiLevel">1</strong>
+          </div>
+          <div class="lexi-progress-stat">
+            <div>
+              <small>XP</small><strong id="lexiXpText">0 / 100 XP</strong>
+            </div>
+            <div class="lexi-meter"><span id="lexiXpBar"></span></div>
+          </div>
+          <div class="lexi-progress-stat">
+            <div>
+              <small>Mots</small><strong id="lexiWordsText">0 / 20</strong>
+            </div>
+            <div class="lexi-meter lexi-meter-blue">
+              <span id="lexiWordsBar"></span>
+            </div>
+          </div>
+          <div class="lexi-progress-stat">
+            <div>
+              <small>Énergie</small><strong id="lexiEnergyText">100 %</strong>
+            </div>
+            <div class="lexi-meter lexi-energy">
+              <span id="lexiEnergyBar"></span>
+            </div>
+          </div>
+          <div class="lexi-hud-actions">
+            <button
+              class="lexi-button lexi-button-small"
+              id="lexiPauseButton"
+              type="button"
+            >
+              Pause</button
+            ><button
+              class="lexi-button lexi-button-small lexi-button-end"
+              id="lexiEndSession"
+              type="button"
+            >
+              Terminer
+            </button>
+          </div>
+        </header>
+
+        <div class="lexi-body" id="lexiBody">
+          <aside
+            class="lexi-notebook"
+            id="lexiNotebook"
+            aria-label="Carnet de vocabulaire"
+          >
+            <div class="lexi-notebook-head">
+              <div>
+                <span class="lexi-kicker">Mes découvertes</span>
+                <h3>Carnet C1</h3>
+              </div>
+              <button
+                id="lexiNotebookClose"
+                type="button"
+                aria-label="Fermer le carnet"
+              >
+                ×
+              </button>
+            </div>
+            <p id="lexiNotebookCount">0 mot enregistré</p>
+            <div class="lexi-notebook-list" id="lexiNotebookList"></div>
+          </aside>
+
+          <main class="lexi-stage-column">
+            <div class="lexi-stage" id="lexiStage">
+              <canvas
+                id="lexiCanvas"
+                width="960"
+                height="540"
+                aria-label="Zone de jeu LexiBall"
+                >Votre navigateur ne prend pas en charge Canvas.</canvas
+              >
+              <div class="lexi-wpm-card">
+                <small>MPM actuel</small><strong id="lexiCurrentWpm">0</strong
+                ><canvas
+                  id="lexiWpmCanvas"
+                  width="190"
+                  height="72"
+                  aria-label="Graphique des mots par minute"
+                ></canvas
+                ><span>Meilleur : <b id="lexiBestWpm">0</b></span>
+              </div>
+              <div class="lexi-screen" id="lexiStartScreen">
+                <div class="lexi-screen-card">
+                  <span class="lexi-logo-ball">●</span>
+                  <h2>LexiBall</h2>
+                  <p>Déplace-toi. Trouve les mots. Écris-les. Apprends.</p>
+                  <div class="lexi-menu-actions">
+                    <button
+                      class="lexi-button lexi-button-primary"
+                      id="lexiPlay"
+                      type="button"
+                    >
+                      Jouer</button
+                    ><button
+                      class="lexi-button"
+                      id="lexiMenuNotebook"
+                      type="button"
+                    >
+                      Carnet</button
+                    ><button
+                      class="lexi-button lexi-button-ghost"
+                      id="lexiReset"
+                      type="button"
+                    >
+                      Réinitialiser la progression
+                    </button>
+                  </div>
+                  <div class="lexi-controls">
+                    <span><kbd>←</kbd> <kbd>→</kbd> déplacement</span
+                    ><span><kbd>↑</kbd> saut</span
+                    ><span><kbd>Clavier</kbd> écrire</span
+                    ><span><kbd>Espace</kbd> carnet</span
+                    ><span><kbd>P</kbd> pause</span>
+                  </div>
+                </div>
+              </div>
+              <div class="lexi-screen" id="lexiPauseScreen" hidden>
+                <div class="lexi-screen-card">
+                  <h2 id="lexiPauseTitle">PAUSE</h2>
+                  <p id="lexiPauseText">Appuie sur P pour reprendre.</p>
+                  <div
+                    class="lexi-session-summary"
+                    id="lexiSessionSummary"
+                    hidden
+                  ></div>
+                  <button
+                    class="lexi-button lexi-button-primary"
+                    id="lexiResume"
+                    type="button"
+                  >
+                    Reprendre</button
+                  ><button
+                    class="lexi-button"
+                    id="lexiRestart"
+                    type="button"
+                    hidden
+                  >
+                    Nouvelle session</button
+                  ><button
+                    class="lexi-button lexi-button-ghost"
+                    id="lexiCloseSession"
+                    type="button"
+                    hidden
+                  >
+                    Fermer le jeu
+                  </button>
+                </div>
+              </div>
+              <div
+                class="lexi-float-message"
+                id="lexiFloatMessage"
+                aria-live="polite"
+              ></div>
+            </div>
+
+            <section class="lexi-typing" id="lexiTyping" aria-live="polite">
+              <div>
+                <span class="lexi-kicker">Mot à écrire</span
+                ><strong class="lexi-target" id="lexiTargetWord"
+                  >Trouve un mot dans le monde</strong
+                >
+              </div>
+              <div class="lexi-input-display" id="lexiTypedWord">_</div>
+              <p id="lexiDefinition">
+                Entre en contact avec un mot pour découvrir sa définition.
+              </p>
+              <small
+                ><kbd>Espace</kbd> ajouter le mot actif au carnet ·
+                <kbd>Retour</kbd> corriger</small
+              >
+            </section>
+          </main>
+        </div>
+      </div>
+    </section>
+    <footer></footer>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
